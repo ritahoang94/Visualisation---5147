@@ -1,4 +1,4 @@
-# Visualisation---5147
+# Visualisation project
 
 Alcohol is one of the most favourite beverages in the world, the indispensable part of every party. Each country has a different drinking behaviour and favourite alcoholic drink, which is affected heavily by geographical, economic and cultural factors. This project targets at alcoholic and travel lovers who are curious about culture, and specifically drinking pattern of different parts of the world.
 
