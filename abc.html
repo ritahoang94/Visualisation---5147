@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Alcohol consumption</title>
+
+<style>
+</style>
+
+    </head>
+    <body style ="margin-left: 30">
+        <h1 style="font-size:60px; text-align:center;"> Visualization Project</h1>
+        
+<!--        <hr style="border:2px solid black;">-->
+        <h3 style="text-align:center;"> World favorite alcoholic drink map</h3>
+<!--        Add messages-->
+                <p style="text-align:center; margin-left: 30px;"> Alcohol is one of the most favourite beverages in the world, the indispensable part of every party.  Each country has a different drinking behaviour and favourite alcoholic drink, which is affected heavily by geographical, economic and cultural factors. This project targets at alcoholic and travel lovers who are curious about culture, and specifically drinking pattern of different parts of the world.</p>
+        
+                <p style="text-align:center"> Based on the data from 2000 to 2016, we can see that most of the countries in Oceania and America and Africa love drinking beer, while Asian countries prefer spirits and wine is favourite alcoholic drink of Western countries.</p>
+        <div id="chart_div" ></div>
+
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type='text/javascript'>
+    
+//    Load function and error handing
+    function LoadGoogle()
+    {
+        if(typeof google != 'undefined' && google && google.load)
+        {
+             google.load('visualization', '1.1', {
+    'packages': ['geochart']
+});
+google.setOnLoadCallback(drawStuff);
+            
+//Load data array
+
+function drawStuff() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Country');
+    data.addColumn('string', 'Category');
+    data.addRows([
+        ['Afghanistan', 'beer'],
+        ['Albania', 'spirit'],
+        ['Algeria', 'wine'],
+        ['Andorra', 'wine'],
+        ['Angola', 'beer'],
+        ['Antigua and Barbuda', 'spirit'],
+        ['Argentina', 'wine'],
+        ['Armenia', 'spirit'],
+        ['Australia', 'beer'],
+        ['Austria','beer'],
+        ['Azerbaijan','spirit'],
+        ['Bahamas, The','spirit'],
+        ['Bahrain','spirit'],
+        ['Bangladesh','other'],
+        ['Barbados','spirit'],
+        ['Belarus','spirit'],
+        ['Belgium','beer'],
+        ['Belize','beer'],
+        ['Benin','beer'],
+        ['Bhutan','beer'],
+        ['Bolivia','beer'],
+        ['Bosnia and Herzegovina','beer'],
+        ['Botswana','beer'],
+        ['Brazil','beer'],
+        ['Brunei Darussalam','beer'],
+        ['Bulgaria','spirit'],
+        ['Burkina Faso','beer'],
+        ['Burundi','beer'],
+        ['Cabo Verde','beer'],
+        ['Cambodia','spirit'],
+        ['Cameroon','beer'],
+        ['Canada','beer'],
+        ['Central African Republic','beer'],
+        ['Chad','beer'],
+        ['Chile','wine'],
+        ['China','spirit'],
+        ['Colombia','beer'],
+        ['Comoros','spirit'],
+        ['Congo, Dem. Rep.','beer'],
+        ['Congo, Rep.','beer'],
+        ['Costa Rica','beer'],
+        ["Cote d'Ivoire","beer"],
+        ['Croatia','wine'],
+        ['Cuba','spirit'],
+        ['Cyprus','spirit'],
+        ['Czech Republic','beer'],
+        ['Denmark','beer'],
+        ['Djibouti','spirit'],
+        ['Dominica','spirit'],
+        ['Dominican Republic','beer'],
+        ['Ecuador','beer'],
+        ['Egypt, Arab Rep.','beer'],
+        ['El Salvador','spirit'],
+        ['Equatorial Guinea','wine'],
+        ['Eritrea','beer'],
+        ['Estonia','spirit'],
+        ['Ethiopia','beer'],
+        ['Fiji','beer'],
+        ['Finland','beer'],
+        ['France','wine'],
+        ['Gabon','beer'],
+        ['Gambia, The','beer'],
+        ['Georgia','wine'],
+        ['Germany','beer'],
+        ['Ghana','beer'],
+        ['Greece','wine'],
+        ['Grenada','spirit'],
+        ['Guatemala','spirit'],
+        ['Guinea','beer'],
+        ['Guinea-Bissau','wine'],
+        ['Guyana','spirit'],
+        ['Haiti','spirit'],
+        ['Honduras','spirit'],
+        ['Hungary','beer'],
+        ['Iceland','beer'],
+        ['India','spirit'],
+        ['Indonesia','beer'],
+        ['Iran, Islamic Rep.','spirit'],
+        ['Iraq','beer'],
+        ['Ireland','beer'],
+        ['Israel','spirit'],
+        ['Italy','wine'],
+        ['Jamaica','spirit'],
+        ['Japan','spirit'],
+        ['Jordan','spirit'],
+        ['Kazakhstan','spirit'],
+        ['Kenya','beer'],
+        ['Kiribati','beer'],
+        ['Korea, Dem. People’s Rep.','spirit'],
+        ['Korea, Rep.','beer'],
+        ['Kuwait','beer'],
+        ['Kyrgyz Republic','spirit'],
+        ['Lao PDR','spirit'],
+        ['Latvia','spirit'],
+        ['Lebanon','spirit'],
+        ['Lesotho','beer'],
+        ['Liberia','spirit'],
+        ['Libya','spirit'],
+        ['Lithuania','beer'],
+        ['Luxembourg','wine'],
+        ['Macedonia, FYR','beer'],
+        ['Madagascar','beer'],
+        ['Malawi','spirit'],
+        ['Malaysia','beer'],
+        ['Maldives','spirit'],
+        ['Mali','beer'],
+        ['Malta','wine'],
+        ['Mauritania','spirit'],
+        ['Mauritius','beer'],
+        ['Mexico','beer'],
+        ['Micronesia, Fed. Sts.','beer'],
+        ['Moldova','wine'],
+        ['Mongolia','spirit'],
+        ['Montenegro','wine'],
+        ['Morocco','wine'],
+        ['Mozambique','spirit'],
+        ['Myanmar','spirit'],
+        ['Namibia','beer'],
+        ['Nauru','beer'],
+        ['Nepal','spirit'],
+        ['Netherlands','beer'],
+        ['New Zealand','beer'],
+        ['Nicaragua','spirit'],
+        ['Niger','beer'],
+        ['Nigeria','beer'],
+        ['Norway','beer'],
+        ['Oman','spirit'],
+        ['Pakistan','spirit'],
+        ['Panama','beer'],
+        ['Papua New Guinea','beer'],
+        ['Paraguay','beer'],
+        ['Peru','beer'],
+        ['Philippines','spirit'],
+        ['Poland','beer'],
+        ['Portugal','wine'],
+        ['Qatar','spirit'],
+        ['Romania','beer'],
+        ['Russian Federation','spirit'],
+        ['Rwanda','beer'],
+        ['Samoa','beer'],
+        ['Sao Tome and Principe','wine'],
+        ['Saudi Arabia','spirit'],
+        ['Senegal','beer'],
+        ['Serbia','beer'],
+        ['Seychelles','beer'],
+        ['Sierra Leone','beer'],
+        ['Singapore','beer'],
+        ['Slovak Republic','spirit'],
+        ['Slovenia','beer'],
+        ['Solomon Islands','beer'],
+        ['Somalia','other'],
+        ['South Africa','beer'],
+        ['Spain','beer'],
+        ['Sri Lanka','spirit'],
+        ['St. Kitts and Nevis','spirit'],
+        ['St. Lucia','spirit'],
+        ['St. Vincent and the Grenadines','spirit'],
+        ['Sudan','spirit'],
+        ['Suriname','spirit'],
+        ['Swaziland','beer'],
+        ['Sweden','wine'],
+        ['Switzerland','wine'],
+        ['Syrian Arab Republic','spirit'],
+        ['Tajikistan','spirit'],
+        ['Tanzania','beer'],
+        ['Thailand','spirit'],
+        ['Timor-Leste','beer'],
+        ['Togo','beer'],
+        ['Tonga','beer'],
+        ['Trinidad and Tobago','beer'],
+        ['Tunisia','beer'],
+        ['Turkey','beer'],
+        ['Turkmenistan','spirit'],
+        ['Tuvalu','spirit'],
+        ['Uganda','beer'],
+        ['Ukraine','spirit'],
+        ['United Arab Emirates','spirit'],
+        ['United Kingdom','beer'],
+        ['United States','beer'],
+        ['Uruguay','wine'],
+        ['Uzbekistan','spirit'],
+        ['Vanuatu','beer'],
+        ['Venezuela, RB','beer'],
+        ['Vietnam','spirit'],
+        ['Yemen, Rep.','beer'],
+        ['Zambia','beer'],
+        ['Zimbabwe','beer']
+
+    ]);
+    
+//    Pickup colour
+    var categoryColors = {
+        'beer': '#fe9929',
+        'wine': '#fb6a4a',
+        'spirit': '#6baed6',
+        'other': '#cccccc'
+    };
+
+//    Mapping
+    var categoryMapping = [];
+    var data2 = new google.visualization.DataTable();
+    data2.addColumn({label: data.getColumnLabel(0), type: 'string'});
+    data2.addColumn({label: data.getColumnLabel(1), type: 'number'});
+
+    for (var i = 0; i < data.getNumberOfRows(); i++) {
+        var category = data.getValue(i, 1);
+        var index = categoryMapping.indexOf(category);
+        if (index < 0) {
+            index = categoryMapping.length;
+            categoryMapping.push(category);
+        }
+        data2.addRow([data.getValue(i, 0), {v: categoryMapping.indexOf(category), f: category}]);
+    }
+
+    // Set chart options
+    var options = {
+        'title': 'World Alcoholic Favourite Drink',
+            'width': 1400,
+            'height': 600,
+        colorAxis: {
+            colors: categoryMapping.map(function(c) { return categoryColors[c]; }),
+            values: categoryMapping.map(function(c,i) { return i; })
+        }
+    };
+
+    // Draw the chat
+    var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+    chart.draw(data2, options);
+};
+   
+        }
+        
+//        Set time out for loading google
+        else
+        {
+            setTimeout(LoadGoogle, 30);
+        }
+    }
+
+    LoadGoogle();
+</script>
+
+
+    </body>
+</html>
